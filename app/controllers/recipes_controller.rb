@@ -1,4 +1,4 @@
-class RecipesController < OpenReadController
+class RecipesController < ProtectedController
   before_action :set_recipe, only: [:show, :update, :destroy]
 
   # GET /recipes
