@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Daily Foodie</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,7 +11,59 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h1>Browser Template</h1>
+
+
+    <body class="container">
+      <nav class="navbar navbar-light bg-light">
+
+          <div class ="buttons" id = "hide-navbar">
+          <button class= "new-game">New Recipe</button> </div>
+          <!--button class = "reset-button">Start Over</button-->
+          <div id = "get-recipe-form" class = "get-recipe-form">
+          <button class= "get-recipe">Get Recipe</button> </div>
+      </nav>
+
+
+
+      <div id= "content" class= "content-msg"> Please Sign-In or Sign-Up to begin the game !</div>
+    <form id ='sign-up-form' class = "form-style">
+    <h4>Sign Up</h4>
+    <input name="credentials[email]" placeholder="Email" type="email"/>
+    <input name="credentials[password]" placeholder="Password" type="password"/>
+    <input name="credentials[password_confirmation]" placeholder="Confirm Password" type="password"/>
+    <button class = "login-button" type="submit"> Submit Login</button>
+    </form>
+
+    <form id ='sign-in-form' class = "form-style">
+    <h4>Sign In</h4>
+    <input name="credentials[email]" placeholder="Email" type="email"/>
+    <input name="credentials[password]" placeholder="Password" type="password"/>
+    <button class ="sign-in-button" type="submit">Log in</button>
+    </form>
+
+    <div id = 'hidden'>
+    <form id ='change-password-form' class = "form-style" >
+    <h4>Change Password </h4>
+    <input name="passwords[old]" placeholder="Old Password" type="password"/>
+    <input name="passwords[new]" placeholder="New Password" type="password"/>
+    <button class ="change-password-button" type="submit">Change Password</button>
+    </form>
+
+    <section>
+    <button id ="sign-out" class = "signing-out">Sign Out</button>
+    </section >
+    </div>
+
+    <form>
+     <fieldset>
+      <legend>Add Your Recipe:</legend>
+      Recipe Name: <input type="text" autocomplete="off" placeholder="Recipe Title " class ="new-recipe" value=""><br>
+      Steps: <input type="text" autocomplete="off" placeholder="Write some notes about the receipe steps"><br>
+      Recipe Link: <input type="text" placeholder="You can add in a link from another website for reference" autocomplete="off">
+     </fieldset>
+    </form>
+    <button type="submit" name="saveRecipe"><i class="box-ss-folder"></i> Save</button>
+
+
     </body>
 </html>

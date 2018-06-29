@@ -1,2 +1,99 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$background-color: #79cdcd;
+$font-color: #666;
+$white: #fff;
+$grey: rgb(128, 128, 128);
+$teal: rgb(0, 156, 161);
+$black: #000;
+$green: #50c878;
+$turqoise: #adeaea;
+$dark-blue: #036;
+$border: #808080;
+$red: #f00;
+$fuschia: #b200b2;
+
+.content-msg {
+  color: $fuschia;
+  font: 40px;
+  padding: 20px;
+}
+
+.get-recipes-form {
+  border: 1px solid $border;
+  float: left;
+  margin: 5px;
+  padding: 5px;
+}
+
+.get-recipe {
+  background-color: $white;
+  color: $teal;
+  float: left;
+  font-size: 15px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.new-game {
+  background-color: $white;
+  color: $teal;
+  float: left;
+  font-size: 15px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.buttons {
+  border: 1px solid $border;
+  float: left;
+  margin: 5px;
+  padding: 5px;
+}
+
+.login-button {
+  background-color: $white;
+  color: $teal;
+}
+
+.sign-in-button {
+  background-color: $white;
+  color: $teal;
+}
+
+.signing-out {
+  background-color: $white;
+  color: $teal;
+  margin: 30px;
+}
+
+.change-password-button {
+  background-color: $white;
+  color: $teal;
+}
+
+h4 {
+  color: $grey;
+  font-size: 20px;
+}
+
+fieldset {
+  display: inline-block;
+  max-width:500px;
+  padding:10px;
+  padding-right: 0.75em;
+  border: 2px groove (internal value);
+  height: 60x;
+  margin: auto;
+}
+
+.legend {
+  margin-bottom: 0px;
+  margin-left: 16px;
+}
+
+.new-recipe {
+  width: 500px;
+  height: 50px;
+}
