@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://localhost:4741/recipes" \
+curl "https://daily-foodie.herokuapp.com/recipes" \
   --include \
   --request GET \
   --header "Authorization: Token token=${TOKEN}"
