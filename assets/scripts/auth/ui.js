@@ -14,19 +14,20 @@ const signUpSuccess = function (signUpResponse) {
 const signUpFail = function (response) {
   $('#content').html(`Sorry, please try again !,
       <br/> Please Login if you already have an account !`)
-  $('#sign-up-form').find('input').val('')
-  $('#sign-in-form').find('input').val('')
-  $('#change-password-form').find('input').val('')
+  // $('#sign-up-form').find('input').val('')
+  // $('#sign-in-form').find('input').val('')
+  // $('#change-password-form').find('input').val('')
 }
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#content').html(`Yaay! You're signed in! <br/> Click on the New Game Button,
-    and begin the game ! Good Luck !`)
-  $('#sign-in-form').find('input').val('')
-  $('#sign-up-form').find('input').val('')
-  $('#change-password-form').find('input').val('')
-  // $('#sign-up-form').hide()
+  console.log('sign in is working')
+  // $('#content').html(`Yaay! You're signed in! <br/> Click on the New Game Button,
+  //   and begin the game ! Good Luck !`)
+  // $('#sign-in-form').find('input').val('')
+  // $('#sign-up-form').find('input').val('')
+  // $('#change-password-form').find('input').val('')
+  // // $('#sign-up-form').hide()
   // $('#sign-out-form').show()
   // $('#change-password-form').show()
   // $('#hidden').show()
@@ -58,11 +59,12 @@ const changePasswordFail = function (response) {
 
 const signOutSuccess = function (response) {
   delete store.user
-  $('#content').html('You have successfully signed out ! See you soon')
-  // store.game.over = true
-  $('#sign-in-form').find('input').val('')
-  $('#change-password-form').find('input').val('')
-  $('#sign-up-form').find('input').val('')
+  console.log('sign out worked')
+  // $('#content').html('You have successfully signed out ! See you soon')
+  // // store.game.over = true
+  // $('#sign-in-form').find('input').val('')
+  // $('#change-password-form').find('input').val('')
+  // $('#sign-up-form').find('input').val('')
 //  $('#sign-up-form').show()
   // $('#hide-navbar').hide()
   // $('#hidden').hide()
@@ -71,6 +73,7 @@ const signOutSuccess = function (response) {
 }
 
 const signOutFailure = function (response) {
+  console.log('sign out failed')
   $('#content').html('Sorry, try again to Sign Out !!')
 }
 

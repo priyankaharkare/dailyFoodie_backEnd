@@ -38,10 +38,20 @@ const signOut = function (data) {
     }
   })
 }
+const createRecipe = function () {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/recipes',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   signUp: signUp,
   signIn: signIn,
   changePassword,
-  signOut: signOut
+  signOut: signOut,
+  createRecipe: createRecipe
 }

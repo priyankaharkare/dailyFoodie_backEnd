@@ -7,6 +7,7 @@
 // require('./example')
 
 const authEvents = require('./auth/events.js') // your JS code goes here
+const authEventsRecipes = require('./auth/eventsRecipes.js')
 
 $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
@@ -16,6 +17,7 @@ $(() => {
   // $('.box').on('click', authLogic1.switchPlayer)
   $('.new-game').on('click', authEvents.onCreateGame)
   $('.get-game').on('click', authEvents.onGetGames)
+  $('.saveRecipe').on('click', authEventsRecipes.onNewRecipe)
   // $('#hidden').hide()
   // $('#hide-navbar').hide()
   // $('#get-games-form').hide()
