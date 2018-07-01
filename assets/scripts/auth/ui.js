@@ -1,4 +1,5 @@
 const store = require('../store.js')
+const authEventsRecipes = require('./eventsRecipes.js')
 
 // store is a js object. you can add keys to it.
 // creating UI for fail and success events
@@ -12,6 +13,7 @@ const signUpSuccess = function (signUpResponse) {
 }
 
 const signUpFail = function (response) {
+  console.log('sign up fail' + response)
   $('#content').html(`Sorry, please try again !,
       <br/> Please Login if you already have an account !`)
   // $('#sign-up-form').find('input').val('')
@@ -21,10 +23,12 @@ const signUpFail = function (response) {
 
 const signInSuccess = function (response) {
   store.user = response.user
+  console.log('sign in response is ' + response)
   console.log('sign in is working')
-  // $('#content').html(`Yaay! You're signed in! <br/> Click on the New Game Button,
+  $('#content').html(`Yaay! You're signed in! <br/> Click on the New Game Button,
   //   and begin the game ! Good Luck !`)
-  // $('#sign-in-form').find('input').val('')
+  authEventsRecipes.onGetRecipes()
+// $('#sign-in-form').find('input').val('')
   // $('#sign-up-form').find('input').val('')
   // $('#change-password-form').find('input').val('')
   // // $('#sign-up-form').hide()
@@ -36,6 +40,7 @@ const signInSuccess = function (response) {
 }
 
 const signInFail = function (response) {
+  console.log('sign in failed')
   $('#content').html(`Oh no ! Check your username and password and try again !`)
   $('#sign-in-form').find('input').val('')
   $('#sign-up-form').find('input').val('')
@@ -59,6 +64,7 @@ const changePasswordFail = function (response) {
 
 const signOutSuccess = function (response) {
   delete store.user
+  console.log('sign out response is ' + response)
   console.log('sign out worked')
   // $('#content').html('You have successfully signed out ! See you soon')
   // // store.game.over = true

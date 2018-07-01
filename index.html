@@ -2,6 +2,7 @@
 <html>
     <head>
       <title>Daily Foodie</title>
+      <h1>DAILY FOODIE</h1>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -15,17 +16,33 @@
 
     <body class="container">
       <nav class="navbar navbar-light bg-light">
-
-          <div class ="buttons" id = "hide-navbar">
-          <button class= "new-game">New Recipe</button> </div>
-          <!--button class = "reset-button">Start Over</button-->
-          <div id = "get-recipe-form" class = "get-recipe-form">
-          <button class= "get-recipe">Get Recipe</button> </div>
-      </nav>
-
+        <div class ="buttons" id = "hide-navbar"> </div>
+              <!-- // <button class= "new-game">New Game</button> </div> -->
+              <!--button class = "reset-button">Start Over</button-->
+              <fieldset><div id = "get-recipes-form" class = "get-recipes-form">
+              <button class= "get-recipes">Get Your Recipes</button> </div>
+          </fieldset></nav>
 
 
-      <div id= "content" class= "content-msg"> Please Sign-In or Sign-Up to begin the game !</div>
+          <form id ="get-one-recipe-form">
+            <fieldset>
+                <legend>Get Your Recipe:</legend>
+                Recipe Name: <input name="name" type="text" autocomplete="off" placeholder="Recipe name " class ="get-one-recipe" value=""><br>
+
+               </fieldset>
+     <button type="submit" class = "get-one-recipe" name="getOneRecipe">Get Your Recipe</button>
+         </form>
+
+         <form id ="delete-one-recipe-form">
+           <fieldset>
+               <legend>Delete Your Recipe:</legend>
+               Recipe Name: <input name="name" type="text" autocomplete="off" placeholder="Recipe name " class ="delete-one-recipe" value=""><br>
+
+              </fieldset>
+         <button type="submit" class = "delete-one-recipe" name="deleteOneRecipe">Delete Your Recipe</button>
+         </form>
+
+      <div id= "content" class= "content-msg"> </div>
     <form id ='sign-up-form' class = "form-style">
     <h4>Sign Up</h4>
     <input name="credentials[email]" placeholder="Email" type="email"/>
@@ -54,15 +71,26 @@
     </section >
     </div>
 
-    <form>
+    <form id ="create-recipe-form">
      <fieldset>
       <legend>Add Your Recipe:</legend>
-      Recipe Name: <input type="text" autocomplete="off" placeholder="Recipe Title " class ="new-recipe" value=""><br>
-      Steps: <input type="text" autocomplete="off" placeholder="Write some notes about the receipe steps"><br>
-      Recipe Link: <input type="text" placeholder="You can add in a link from another website for reference" autocomplete="off">
+      Recipe Name: <input name="name" type="text" autocomplete="off" placeholder="Recipe Title " class ="new-recipe" value=""><br>
+      Steps: <input name="steps" type="text" autocomplete="off" placeholder="Write some notes about the receipe steps"><br>
+      Recipe Link: <input name="link" type="text" placeholder="You can add in a link from another website for reference" autocomplete="off">
      </fieldset>
+     <button type="submit" class = "save-recipe" name="saveRecipe"> Save</button>
+
+</form>
+
+     <form id ="update-recipe-form">
+       <fieldset>
+           <legend>Update Your Recipe:</legend>
+           Recipe Name: <input name="name" type="text" autocomplete="off" placeholder="Update Recipe Title " class ="new-recipe" value=""><br>
+           Steps: <input name="steps" type="text" autocomplete="off" placeholder="Update the receipe steps"><br>
+           Recipe Link: <input name="link" type="text" placeholder="Update the recipe URL" autocomplete="off">
+          </fieldset>
+          <button type="submit" class = "update-recipe" name="updateRecipe"> Update</button>
     </form>
-    <button type="submit" name="saveRecipe"><i class="box-ss-folder"></i> Save</button>
 
 
     </body>
