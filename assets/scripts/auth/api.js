@@ -69,9 +69,15 @@ const getOneRecipe = function (data) {
   // console.log('data is ', data)
   // console.log('store is ', store)
   console.log(`one recipe success is` + data)
+  const existingRecipe = store.recipes
+  const recipeId = existingRecipe.find((o, i) => {
+    if (o.name === data.name) {
+      return o.id // stop searching
+    }
+  })
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/recipes/' + data.id,
+    url: config.apiUrl + '/recipes/' + recipeId.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -83,10 +89,16 @@ const updateRecipe = function (data) {
   // console.log('data is ', data)
   // console.log('store is ', store)
   console.log(`one recipe success is` + data)
+  let existingRecipe = store.recipes
+  let recipeId = existingRecipe.find((o, i) => {
+    if (o.name === data.name) {
+      return o.id // stop searching
+    }
+  })
   return $.ajax({
     method: 'PATCH',
     data: {recipe: data},
-    url: config.apiUrl + '/recipes/' + data.id,
+    url: config.apiUrl + '/recipes/' + recipeId.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }

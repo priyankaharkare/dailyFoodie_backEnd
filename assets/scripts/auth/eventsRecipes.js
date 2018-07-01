@@ -21,6 +21,7 @@ const onGetRecipes = function () {
     .then(authRecipeUi.getRecipesSuccess)
     .catch(authRecipeUi.getRecipesFail)
 }
+
 const onGetOneRecipe = function (event) {
   console.log('something happening on get on recipe event' + event.target)
   event.preventDefault()
