@@ -1,0 +1,19 @@
+
+  {{#each recipes as |recipe|}}
+    {{log recipe}}
+  <h3 data-id="{{recipe.id}}" class = "recipe-list" > <small>Name: {{recipe.name}}</small></h3>
+    <ul data-id="{{recipe.id}}">
+    <li>{{#if recipe.steps}}
+        {{recipe.steps}}
+        {{else}}
+          No steps provided
+        {{/if}}
+      </li>
+    <li>{{#if recipe.link}}
+        {{recipe.link}}
+        {{else}}
+        No link found
+      {{/if}}</li>
+
+  </ul>
+  {{/each}}

@@ -9,34 +9,33 @@ const signUpSuccess = function (signUpResponse) {
   $('#sign-up-form').find('input').val('')
   $('#sign-in-form').find('input').val('')
   $('#change-password-form').find('input').val('')
-  // $('#sign-up-form').hide()
+  $('#sign-up-form').hide()
 }
 
 const signUpFail = function (response) {
   console.log('sign up fail' + response)
   $('#content').html(`Sorry, please try again !,
       <br/> Please Login if you already have an account !`)
-  // $('#sign-up-form').find('input').val('')
-  // $('#sign-in-form').find('input').val('')
-  // $('#change-password-form').find('input').val('')
+  $('#sign-up-form').find('input').val('')
+  $('#sign-in-form').find('input').val('')
+  $('#change-password-form').find('input').val('')
 }
 
 const signInSuccess = function (response) {
   store.user = response.user
   console.log('sign in response is ' + response)
   console.log('sign in is working')
-  $('#content').html(`Yaay! You're signed in! <br/> Click on the New Game Button,
-  //   and begin the game ! Good Luck !`)
-  authEventsRecipes.onGetRecipes()
-// $('#sign-in-form').find('input').val('')
-  // $('#sign-up-form').find('input').val('')
-  // $('#change-password-form').find('input').val('')
-  // // $('#sign-up-form').hide()
-  // $('#sign-out-form').show()
-  // $('#change-password-form').show()
+  $('#content').html(`Yaay! You're signed in`)
+  // authEventsRecipes.onGetRecipes()
+  $('#sign-in-form').find('input').val('')
+  $('#sign-up-form').find('input').val('')
+  $('#change-password-form').find('input').val('')
+  $('#sign-up-form').hide()
+  $('#sign-out-form').show()
+  $('#change-password-form').show()
   // $('#hidden').show()
-  // $('#hide-navbar').show()
-  // $('#sign-in-form').hide()
+  $('#hide-navbar').show()
+  $('#sign-in-form').hide()
 }
 
 const signInFail = function (response) {
@@ -66,16 +65,16 @@ const signOutSuccess = function (response) {
   delete store.user
   console.log('sign out response is ' + response)
   console.log('sign out worked')
-  // $('#content').html('You have successfully signed out ! See you soon')
+  $('#content').html('You have successfully signed out ! See you soon')
   // // store.game.over = true
-  // $('#sign-in-form').find('input').val('')
-  // $('#change-password-form').find('input').val('')
-  // $('#sign-up-form').find('input').val('')
-//  $('#sign-up-form').show()
-  // $('#hide-navbar').hide()
+  $('#sign-in-form').find('input').val('')
+  $('#change-password-form').find('input').val('')
+  $('#sign-up-form').find('input').val('')
+  $('#sign-up-form').show()
+  $('#hide-navbar').hide()
   // $('#hidden').hide()
   // // $('#get-games-form').hide()
-  // $('#sign-in-form').show()
+  $('#sign-in-form').show()
 }
 
 const signOutFailure = function (response) {

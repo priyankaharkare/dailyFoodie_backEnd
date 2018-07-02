@@ -14,6 +14,18 @@ $border: #808080;
 $red: #f00;
 $fuschia: #b200b2;
 
+.my-jumbotron {
+  background-color:$fuschia
+}
+
+.intro-info {
+  float: left;
+}
+
+.login-info {
+  float:left;
+}
+
 .content-msg {
   color: $fuschia;
   font: 40px;
@@ -22,7 +34,7 @@ $fuschia: #b200b2;
 
 .get-recipes-form {
   border: 1px solid $border;
-  float: left;
+  float: right;
   margin: 5px;
   padding: 5px;
 }

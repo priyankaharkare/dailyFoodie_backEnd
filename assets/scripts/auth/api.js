@@ -54,7 +54,7 @@ const createRecipe = function (data) {
 const getRecipes = function () {
   console.log('is get recipes working?')
   // console.log('data is ', data)
-  // it shoeconsole.log('store is ', store)
+  // console.log('store is ', store)
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/recipes',
@@ -105,20 +105,21 @@ const updateRecipe = function (data) {
   })
 }
 
-const deleteRecipe = function (data) {
+const deleteRecipe = function (id) {
   console.log('is get recipes working?')
   // console.log('data is ', data)
   // console.log('store is ', store)
-  console.log(`recipe delete is` + data)
-  let existingRecipe = store.recipes
-  let recipeId = existingRecipe.find((o, i) => {
-    if (o.name === data.name) {
-      return o.id // stop searching
-    }
-  })
+  console.log(`recipe delete is` + id)
+  // let existingRecipe = store.recipes
+  // let recipeId = existingRecipe.find((o, i) => {
+  //   if (o.name === data.name) {
+  //     return o.id // stop searching
+  //   }
+  // })
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/recipes/' + recipeId.id,
+    // url: config.apiUrl + '/recipes/' + recipeId.id,
+    url: config.apiUrl + '/recipes/' + /'recipes'/ + id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }

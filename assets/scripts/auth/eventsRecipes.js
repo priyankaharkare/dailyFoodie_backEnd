@@ -12,9 +12,9 @@ const onCreateRecipe = function (event) {
     .catch(authRecipeUi.createRecipeFail)
 }
 
-const onGetRecipes = function () {
+const onGetRecipes = function (event) {
   // console.log('something happening on get recipes event' + event.target)
-  // event.preventDefault()
+  event.preventDefault()
   // const data = getFormFields(event.target)
   // console.log('data is ' + recipes)
   authApi.getRecipes()
@@ -45,11 +45,17 @@ const onUpdateRecipe = function (event) {
 const onDeleteRecipe = function (event) {
   console.log('something happening on delete recipe event' + event)
   event.preventDefault()
-  const data = getFormFields(event.target)
+  const bookId = $(event.target).closest('ul').attr('data-id')
+  // const data = getFormFields(event.target)
   // console.log('data is ' + data)
-  authApi.deleteRecipe(data)
-    .then(authRecipeUi.deleteRecipeSuccess)
+  authApi.deleteRecipe(bookId)
+    .then(() => onGetRecipes(event))
     .catch(authRecipeUi.deleteRecipeFail)
+}
+
+const addHandlers = () => {
+  $('#get-all-recipes').on('click', onGetRecipes)
+  // $('.content').on('click', 'button', onDeleteRecipe)
 }
 
 module.exports = {
@@ -57,5 +63,6 @@ module.exports = {
   onGetRecipes,
   onGetOneRecipe,
   onUpdateRecipe,
-  onDeleteRecipe
+  onDeleteRecipe,
+  addHandlers
 }
