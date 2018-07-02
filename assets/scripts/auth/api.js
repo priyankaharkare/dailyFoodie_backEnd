@@ -119,7 +119,7 @@ const deleteRecipe = function (id) {
   return $.ajax({
     method: 'DELETE',
     // url: config.apiUrl + '/recipes/' + recipeId.id,
-    url: config.apiUrl + '/recipes/' + /'recipes'/ + id,
+    url: config.apiUrl + '/recipes/' + id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }

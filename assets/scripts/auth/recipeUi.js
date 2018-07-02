@@ -61,7 +61,7 @@ const updateRecipeFail = function (response) {
 }
 
 const deleteRecipeSuccess = function (response) {
-  console.log(`delete one recipe success response is ` + response)
+  console.log(`delete one recipe success response is ` + response.data)
   // console.log(response.recipes.name)
 }
 

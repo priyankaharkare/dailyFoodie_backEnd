@@ -45,17 +45,18 @@ const onUpdateRecipe = function (event) {
 const onDeleteRecipe = function (event) {
   console.log('something happening on delete recipe event' + event)
   event.preventDefault()
-  const bookId = $(event.target).closest('ul').attr('data-id')
+  const recipeId = $(event.target).attr('data-id')
   // const data = getFormFields(event.target)
-  // console.log('data is ' + data)
-  authApi.deleteRecipe(bookId)
+  console.log('recipeId is ' + recipeId)
+  authApi.deleteRecipe(recipeId)
     .then(() => onGetRecipes(event))
+    .then(authRecipeUi.deleteRecipeSuccess)
     .catch(authRecipeUi.deleteRecipeFail)
 }
 
 const addHandlers = () => {
   $('#get-all-recipes').on('click', onGetRecipes)
-  // $('.content').on('click', 'button', onDeleteRecipe)
+  $('#list-of-recipes').on('click', '.delete-recipe', onDeleteRecipe)
 }
 
 module.exports = {

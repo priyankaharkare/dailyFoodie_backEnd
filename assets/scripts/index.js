@@ -23,7 +23,7 @@ $(() => {
   // $('#get-recipes-form').on('click', authEventsRecipes.onGetRecipes)
   $('#create-recipe-form').on('submit', authEventsRecipes.onCreateRecipe)
   $('#update-recipe-form').on('submit', authEventsRecipes.onUpdateRecipe)
-  $('#delete-one-recipe-form').on('submit', authEventsRecipes.onDeleteRecipe)
+  // $('#delete-one-recipe-form').on('submit', authEventsRecipes.onDeleteRecipe)
   // $('#hidden').hide()
   // $('#hide-navbar').hide()
   // $('#get-games-form').hide()

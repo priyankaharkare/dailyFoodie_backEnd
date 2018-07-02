@@ -14,6 +14,21 @@
         {{else}}
         No link found
       {{/if}}</li>
+      <li><button class="btn btn-default delete-recipe" data-class="delete-recipe" data-id='{{recipe.id}}'>Remove recipe!</button></li>
+       <li><button class="btn btn-default update-recipe" data-class="update-recipe" data-id='{{recipe.id}}'>Update recipe!</button></li>
+       <li><fieldset>
+         <legend>Update Your Recipe:</legend>
+         Recipe Name: <input name="name" type="text" autocomplete="off" placeholder="Update Recipe Title " class="new-recipe" value=""><br> Steps: <input name="steps" type="text" autocomplete="off" placeholder="Update the receipe steps"><br> Recipe
+         Link:
+         <input name="link" type="text" placeholder="Update the recipe URL" autocomplete="off">
+       </fieldset>
+       <button type="submit" class="update-recipe" name="updateRecipe"> Update</button>
+     </form></li>
+       <!-- <li><button class="btn btn-default update-name" data-class+"update-name" data-id='{{recipe.id}}'>Update name !</button><li>
+         <li><button class="btn btn-default update-steps" data-class+"update-steps" data-id='{{recipe.id}}'>Update steps !</button><li>
+           <li><button class="btn btn-default update-link" data-class+"update-link" data-id='{{recipe.id}}'>Update link !</button><li> -->
+
+
 
   </ul>
   {{/each}}
