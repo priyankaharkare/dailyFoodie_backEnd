@@ -84,21 +84,21 @@ const getOneRecipe = function (data) {
   })
 }
 
-const updateRecipe = function (data) {
-  console.log('is get recipes working?')
+const updateRecipe = function (data, recipeId) {
+  console.log('is update recipes working?')
   // console.log('data is ', data)
   // console.log('store is ', store)
-  console.log(`one recipe success is` + data)
-  let existingRecipe = store.recipes
-  let recipeId = existingRecipe.find((o, i) => {
-    if (o.name === data.name) {
-      return o.id // stop searching
-    }
-  })
+  console.log(`update recipe success is` + data)
+  // let existingRecipe = store.recipes
+  // let recipeId = existingRecipe.find((o, i) => {
+  //   if (o.name === data.name) {
+  //     return o.id // stop searching
+  //   }
+  // })
   return $.ajax({
     method: 'PATCH',
     data: {recipe: data},
-    url: config.apiUrl + '/recipes/' + recipeId.id,
+    url: config.apiUrl + '/recipes/' + recipeId,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }

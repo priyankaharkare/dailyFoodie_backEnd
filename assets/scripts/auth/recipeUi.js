@@ -24,10 +24,11 @@ $('#content').html(`Sorry, please try again !`)
 //   $('#change-password-form').find('input').val('')
 // }
 const getRecipesSuccess = function (data) {
-  console.log(`get recipe success response is ` + data)
+  console.log(`get recipes success response is ` + data)
   const showRecipesHtml = showRecipesTemplate({ recipes: data.recipes })
-  $('#list-of-recipes').append(showRecipesHtml)
+  $('#list-of-recipes').html(showRecipesHtml)
   store.recipes = data.recipes
+  $('#update-one-recipe').hide()
   // console.log('response.recipes is ' + response.recipes)
   // console.log(`specific recipe name is ` + response.recipes[3]['name'])
   // console.log(`specific recipe link is ` + response.recipes.link)
@@ -51,17 +52,23 @@ const getOneRecipeFail = function (response) {
   console.log('get one recipe fail is ' + response)
 }
 
-const updateRecipeSuccess = function (response) {
-  console.log(`update one recipe success response is ` + response)
+const updateRecipeSuccess = function (data) {
+  console.log(`update one recipe success response is ` + data)
+  //  console.log(`update one recipe success recipeId is` + `recipeId`)
+  store.update.recipe.name = data.recipe.name
+  store.update.recipe.steps = data.recipe.steps
+  store.update.recipe.link = data.recipe.link
+
   // console.log(response.recipes.name)
 }
 
-const updateRecipeFail = function (response) {
-  console.log('update recipe fail is ' + response)
+const updateRecipeFail = function () {
+  console.log('update recipe fail')
 }
 
 const deleteRecipeSuccess = function (response) {
   console.log(`delete one recipe success response is ` + response.data)
+  getRecipesSuccess()
   // console.log(response.recipes.name)
 }
 
