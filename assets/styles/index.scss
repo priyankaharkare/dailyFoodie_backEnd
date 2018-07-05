@@ -15,7 +15,13 @@ $red: #f00;
 $fuschia: #b200b2;
 
 .my-jumbotron {
-  background-color:$fuschia
+  background-color: $fuschia;
+}
+
+.content.div {
+  color: $fuschia;
+  font: 80px;
+  padding: 40px;
 }
 
 .intro-info {
@@ -23,17 +29,17 @@ $fuschia: #b200b2;
 }
 
 .login-info {
-  float:left;
+  float: left;
 }
 
 .content-msg {
   color: $fuschia;
-  font: 40px;
+  font: 80px;
   padding: 20px;
 }
 
 .get-recipes-form {
-  border: 1px solid $border;
+  border: 1px solid;
   float: right;
   margin: 5px;
   padding: 5px;
@@ -64,11 +70,6 @@ $fuschia: #b200b2;
   padding: 5px;
 }
 
-.login-button {
-  background-color: $white;
-  color: $teal;
-}
-
 .sign-in-button {
   background-color: $white;
   color: $teal;
@@ -90,19 +91,51 @@ h4 {
   font-size: 20px;
 }
 
-fieldset {
+.add-recipes {
+  color:$teal;
   display: inline-block;
   max-width:500px;
   padding:10px;
   padding-right: 0.75em;
-  border: 2px groove (internal value);
-  height: 60x;
+  border: 1px;
+  height: 50x;
   margin: auto;
 }
 
-.legend {
-  margin-bottom: 0px;
+.show-all-recipes {
+  background-color: $white;
+  color: $teal;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.add-legend-class {
+  color: $fuschia;
+  font-size: 15px;
+  margin-bottom: 2px;
   margin-left: 16px;
+  padding: 20px;
+}
+
+.create-recipe-class {
+  border: 1px solid $grey;
+}
+
+h5 {
+color: $teal;
+font-size: 15px;
+}
+
+.update-fieldset {
+  border: 1px solid $grey;
+  padding: 5px;
+}
+
+.legend-class {
+  color: $fuschia;
+  font-size: 15px;
+  margin: 5px;
+  padding: 5px;
 }
 
 .new-recipe {

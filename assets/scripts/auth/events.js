@@ -23,6 +23,7 @@ const onSignIn = function (event) {
   authApi.signIn(data)
     .then(authUi.signInSuccess)
     .catch(authUi.signInFail)
+    .then(authApi.getRecipes)
 }
 
 const onChangePassword = function (event) {

@@ -39,6 +39,10 @@ const signOut = function (data) {
     }
   })
 }
+
+// end of user authentication
+// start recipe Api
+
 const createRecipe = function (data) {
   console.log('data is ' + data)
   return $.ajax({
@@ -64,37 +68,31 @@ const getRecipes = function () {
   })
 }
 
-const getOneRecipe = function (data) {
-  console.log('is get recipes working?')
-  // console.log('data is ', data)
-  // console.log('store is ', store)
-  console.log(`one recipe success is` + data)
-  const existingRecipe = store.recipes
-  const recipeId = existingRecipe.find((o, i) => {
-    if (o.name === data.name) {
-      return o.id // stop searching
-    }
-  })
-  return $.ajax({
-    method: 'GET',
-    url: config.apiUrl + '/recipes/' + recipeId.id,
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
+// const getOneRecipe = function (data) {
+//   console.log('is get one recipe working?')
+//   console.log('data one recipe is ', data)
+//   // console.log('store is ', store)
+//   console.log(`one recipe success is` + data)
+//   const existingRecipe = store.recipes
+//   const recipeId = existingRecipe.find((o, i) => {
+//     if (o.name === data.name) {
+//       return o.id // stop searching
+//     }
+//   })
+//   return $.ajax({
+//     method: 'GET',
+//     url: config.apiUrl + '/recipes/' + recipeId.id,
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 
 const updateRecipe = function (data, recipeId) {
   console.log('is update recipes working?')
   // console.log('data is ', data)
   // console.log('store is ', store)
   console.log(`update recipe success is` + data)
-  // let existingRecipe = store.recipes
-  // let recipeId = existingRecipe.find((o, i) => {
-  //   if (o.name === data.name) {
-  //     return o.id // stop searching
-  //   }
-  // })
   return $.ajax({
     method: 'PATCH',
     data: {recipe: data},
@@ -110,21 +108,35 @@ const deleteRecipe = function (id) {
   // console.log('data is ', data)
   // console.log('store is ', store)
   console.log(`recipe delete is` + id)
-  // let existingRecipe = store.recipes
-  // let recipeId = existingRecipe.find((o, i) => {
-  //   if (o.name === data.name) {
-  //     return o.id // stop searching
-  //   }
-  // })
   return $.ajax({
     method: 'DELETE',
-    // url: config.apiUrl + '/recipes/' + recipeId.id,
     url: config.apiUrl + '/recipes/' + id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
 }
+
+// const deleteOneRecipe = function (data) {
+//   console.log('is get recipes working?')
+//   console.log('data is ', data)
+//   // console.log('store is ', store)
+//   console.log(`one recipe success is` + data)
+//   const existingRecipe = store.recipes
+//   const recipeId = existingRecipe.find((o, i) => {
+//     if (o.name === data.name) {
+//       return o.id // stop searching
+//     }
+//   })
+//   return $.ajax({
+//     method: 'DELETE',
+//     url: config.apiUrl + '/recipes/' + recipeId.id,
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
+
 module.exports = {
   signUp: signUp,
   signIn: signIn,
@@ -132,7 +144,8 @@ module.exports = {
   signOut: signOut,
   createRecipe: createRecipe,
   getRecipes: getRecipes,
-  getOneRecipe,
+  // getOneRecipe,
   updateRecipe,
   deleteRecipe
+  // deleteOneRecipe
 }

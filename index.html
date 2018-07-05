@@ -17,7 +17,7 @@
 <body>
   <div class="jumbotron my-jumbotron">
     <h1>Daily Foodie</h1>
-    <p> Demystify the art of meal prepping </p>
+    <p> Demystify the art of meal prepping ! </p>
   </div>
 
   <div class="container intro-info">
@@ -87,7 +87,13 @@
 
           <h4>HAPPY PREPPING !!</h4>
       </div>
+
       <div class="col-xs-6">
+        <div id="content-msg" class="content-msg"> Welcome ! You can choose to create, delete or find your receipes.</br>
+                  You can view others' recipes ( to help you plan your meals better ), but you will not be able to make any changes !
+         </div>
+         <!-- <div class=" content-div"> hi </div> -->
+
         <div class="row">
           <div class="col-xs-12">
             <form class="sign-up-form">
@@ -111,9 +117,9 @@
           </div>
         </div>
 
+
         <div class="row">
           <div class="col-xs-12">
-            <div id='hidden'>
               <form id='change-password-form' class="form-style">
                 <h4>Change Password </h4>
                 <input name="passwords[old]" placeholder="Old Password" type="password" />
@@ -122,7 +128,6 @@
               </form>
             </div>
           </div>
-        </div>
 
         <div class="row">
           <div class="col-xs-12">
@@ -132,15 +137,28 @@
           </div>
         </div>
 
-        <div class="row">
-          <ul class="col-xs-12 list-of-recipes" id="list-of-recipes"> </ul>
+<!-- end of login forms -->
+
+      <div class = recipes-forms>
+        <div class="show-all-recipes"> <button class="btn btn-default show-all" id="get-all-recipes">View All Recipes</button></div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <form id="create-recipe-form" class ="create-recipe-class">
+            <fieldset class = "add-recipes">
+              <legend class = "add-legend-class" >ADD YOUR RECIPES BELOW</legend>
+              Recipe Name: <input name="name"  type="text" autocomplete="off" placeholder="Recipe Title " class="recipe-title" value=""><br> Steps: <input name="steps" class= "recipe-steps" type="text" autocomplete="off" placeholder="Recipe steps"><br>
+              Recipe Link: <input name="link" type="text" placeholder="Recipe URL" autocomplete="off">
+            </fieldset>
+            <button type="submit" class="save-recipe" name="saveRecipe">Save</button>
+
+          </form>
         </div>
-      <div id="content-msg" class="content-msg"> </div>
+      </div>
+    </div>
 
-      <div> <button class="btn btn-default" id="get-all-recipes">See All Your Recipes</button></div>
 
-
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-xs-12">
             <form id="get-one-recipe-form">
               <fieldset>
@@ -152,9 +170,9 @@
             </form>
           </div>
         </div>
+ -->
 
-
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-xs-12">
             <form id="delete-one-recipe-form">
               <fieldset>
@@ -166,98 +184,22 @@
             </form>
           </div>
         </div>
+</div> -->
+
 
         <div class="row">
-          <div class="col-xs-12">
-            <form id="create-recipe-form">
-              <fieldset>
-                <legend>Add Your Recipe:</legend>
-                Recipe Name: <input name="name" type="text" autocomplete="off" placeholder="Recipe Title " class="new-recipe" value=""><br> Steps: <input name="steps" type="text" autocomplete="off" placeholder="Write some notes about the receipe steps"><br>                Recipe Link: <input name="link" type="text" placeholder="You can add in a link from another website for reference" autocomplete="off">
-              </fieldset>
-              <button type="submit" class="save-recipe" name="saveRecipe"> Save</button>
+                   <ul class="col-xs-12 list-of-recipes" id="list-of-recipes">  </ul>
 
-            </form>
-          </div>
-        </div>
-        <!-- <div class="row">
-          <div class="col-xs-12">
-            <form id="update-recipe-form">
-              <fieldset>
-                <legend>Update Your Recipe:</legend>
-                Recipe Name: <input name="name" type="text" autocomplete="off" placeholder="Update Recipe Title " class="new-recipe" value=""><br> Steps: <input name="steps" type="text" autocomplete="off" placeholder="Update the receipe steps"><br> Recipe
-                Link:
-                <input name="link" type="text" placeholder="Update the recipe URL" autocomplete="off">
-              </fieldset>
-              <button type="submit" class="update-recipe" name="updateRecipe"> Update</button>
-            </form>
-          </div>
-        </div> -->
+      </div>
+      </div>
       </div>
     </div>
-  </div>
+
   <!--end of col-xs-6 left side box  -->
 
 
 
 
-  <!-- </div>
-   </div>
- </div> -->
-
-  <!-- <div id= "content" class= "content-msg"> </div>
-    <form id ='sign-up-form' class = "form-style">
-    <h4>Sign Up</h4>
-    <input name="credentials[email]" placeholder="Email" type="email"/>
-    <input name="credentials[password]" placeholder="Password" type="password"/>
-    <input name="credentials[password_confirmation]" placeholder="Confirm Password" type="password"/>
-    <button class = "login-button" type="submit"> Submit Login</button>
-    </form>
-
-    <form id ='sign-in-form' class = "form-style">
-    <h4>Sign In</h4>
-    <input name="credentials[email]" placeholder="Email" type="email"/>
-    <input name="credentials[password]" placeholder="Password" type="password"/>
-    <button class ="sign-in-button" type="submit">Log in</button>
-    </form>
-
-    <div id = 'hidden'>
-    <form id ='change-password-form' class = "form-style" >
-    <h4>Change Password </h4>
-    <input name="passwords[old]" placeholder="Old Password" type="password"/>
-    <input name="passwords[new]" placeholder="New Password" type="password"/>
-    <button class ="change-password-button" type="submit">Change Password</button>
-    </form>
-
-    <section>
-    <button id ="sign-out" class = "signing-out">Sign Out</button>
-    </section >
-    </div> -->
-  <!-- <div class="col-xs-12">
-      <form id ="create-recipe-form">
-     <fieldset>
-      <legend>Add Your Recipe:</legend>
-      Recipe Name: <input name="name" type="text" autocomplete="off" placeholder="Recipe Title " class ="new-recipe" value=""><br>
-      Steps: <input name="steps" type="text" autocomplete="off" placeholder="Write some notes about the receipe steps"><br>
-      Recipe Link: <input name="link" type="text" placeholder="You can add in a link from another website for reference" autocomplete="off">
-     </fieldset>
-     <button type="submit" class = "save-recipe" name="saveRecipe"> Save</button>
-
-   </form></div>
-
-   <div class="col-xs-12">
-     <form id ="update-recipe-form">
-       <fieldset>
-           <legend>Update Your Recipe:</legend>
-           Recipe Name: <input name="name" type="text" autocomplete="off" placeholder="Update Recipe Title " class ="new-recipe" value=""><br>
-           Steps: <input name="steps" type="text" autocomplete="off" placeholder="Update the receipe steps"><br>
-           Recipe Link: <input name="link" type="text" placeholder="Update the recipe URL" autocomplete="off">
-          </fieldset>
-          <button type="submit" class = "update-recipe" name="updateRecipe"> Update</button>
-    </form></div> -->
-  <!-- // <div id= "content" class= "content-msg"> </div> -->
-  <!-- Display ui.js message -->
-  <!-- <div class="col-xs-12" id="list-of-recipe-message"></div> -->
-  <!-- append handlebars here -->
 
 
 </body>

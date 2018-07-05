@@ -8,6 +8,7 @@ const authRecipeUi = require('./recipeUi.js')
 // updateForm.classList.remove('hidden')
 // }
 //
+// let recipeId = 0
 
 const onCreateRecipe = function (event) {
   console.log('something happening on click event' + event.target)
@@ -17,8 +18,6 @@ const onCreateRecipe = function (event) {
   authApi.createRecipe(data)
     .then(authRecipeUi.createRecipeSuccess)
     .catch(authRecipeUi.createRecipeFail)
-    .then(authApi.getRecipes)
-    .then(authRecipeUi.getRecipesSuccess)
 }
 
 const onGetRecipes = function (event) {
@@ -31,15 +30,26 @@ const onGetRecipes = function (event) {
     .catch(authRecipeUi.getRecipesFail)
 }
 
-const onGetOneRecipe = function (event) {
-  console.log('something happening on get on recipe event' + event.target)
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  console.log('data is ' + data)
-  authApi.getOneRecipe(data)
-    .then(authRecipeUi.getOneRecipeSuccess)
-    .catch(authRecipeUi.getOneRecipeFail)
-}
+// const onGetOneRecipe = function (event) {
+//   console.log('something happening on get one recipe event' + event.target)
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   console.log('data is ' + data)
+//   authApi.getOneRecipe(data)
+//     .then(authRecipeUi.getOneRecipeSuccess)
+//     .catch(authRecipeUi.getOneRecipeFail)
+// }
+
+// const onDeleteOneRecipe = function (event) {
+//   console.log('deleting one recipe')
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   console.log('delete Recipe data is ' + data)
+//   authApi.getOneRecipe(data)
+//     .then(authRecipeUi.deleteOneRecipeSuccess)
+//     .catch(authRecipeUi.deleteOneRecipeFail)
+//     .then(authApi.getRecipes)
+// }
 
 const onUpdateRecipe = function (event) {
   console.log('event is ' + event)
@@ -72,20 +82,32 @@ const onDeleteRecipe = function (event) {
     .then(authRecipeUi.getRecipesSuccess)
 }
 
+// const onShowUpdateForm = function (event) {
+//   console.log('event is' + event)
+//   console.log('event target is' + event.target)
+//   const recipeId = $(event.target).attr('data-id')
+//   console.log($(event.target).attr('data-id'))
+//   event.preventDefault()
+//   $('.update-recipe-' + recipeId).show()
+// }
+
 const addHandlers = () => {
+  // const updateName = '#update-recipe' + recipeId
   $('#get-all-recipes').on('click', onGetRecipes)
   $('#list-of-recipes').on('click', '.delete-recipe', onDeleteRecipe)
   $('#list-of-recipes').on('submit', '.update-one-recipe', onUpdateRecipe)
+  // $('#list-of-recipes').on('click', '#update-recipe', onShowUpdateForm)
   // $('.update-recipes').on('click', revealUpdateForm)
-  // $('#show-posts').on('click','.editButton',revealForm)// $('#update-one-recipe').hide()
 }
 
 module.exports = {
   onCreateRecipe,
   onGetRecipes,
-  onGetOneRecipe,
+  // onGetOneRecipe,
   onUpdateRecipe,
   onDeleteRecipe,
   addHandlers
+  // onShowUpdateForm
+  // onDeleteOneRecipe
   // revealUpdateForm
 }
