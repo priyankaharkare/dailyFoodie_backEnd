@@ -2,7 +2,6 @@ const store = require('../store.js')
 const config = require('../config.js')
 
 const signUp = function (data) {
-  console.log('ajax sign up is ' + data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-up',
@@ -44,7 +43,6 @@ const signOut = function (data) {
 // start recipe Api
 
 const createRecipe = function (data) {
-  console.log('data is ' + data)
   return $.ajax({
     method: 'POST',
     data: {recipe: data},
@@ -56,9 +54,6 @@ const createRecipe = function (data) {
 }
 // show all recipes
 const getRecipes = function () {
-  console.log('is get recipes working?')
-  // console.log('data is ', data)
-  // console.log('store is ', store)
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/recipes',
@@ -89,10 +84,6 @@ const getRecipes = function () {
 // }
 
 const updateRecipe = function (data, recipeId) {
-  console.log('is update recipes working?')
-  // console.log('data is ', data)
-  // console.log('store is ', store)
-  console.log(`update recipe success is` + data)
   return $.ajax({
     method: 'PATCH',
     data: {recipe: data},
@@ -104,10 +95,6 @@ const updateRecipe = function (data, recipeId) {
 }
 
 const deleteRecipe = function (id) {
-  console.log('is get recipes working?')
-  // console.log('data is ', data)
-  // console.log('store is ', store)
-  console.log(`recipe delete is` + id)
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/recipes/' + id,
@@ -117,26 +104,6 @@ const deleteRecipe = function (id) {
   })
 }
 
-// const deleteOneRecipe = function (data) {
-//   console.log('is get recipes working?')
-//   console.log('data is ', data)
-//   // console.log('store is ', store)
-//   console.log(`one recipe success is` + data)
-//   const existingRecipe = store.recipes
-//   const recipeId = existingRecipe.find((o, i) => {
-//     if (o.name === data.name) {
-//       return o.id // stop searching
-//     }
-//   })
-//   return $.ajax({
-//     method: 'DELETE',
-//     url: config.apiUrl + '/recipes/' + recipeId.id,
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
-
 module.exports = {
   signUp: signUp,
   signIn: signIn,
@@ -144,8 +111,6 @@ module.exports = {
   signOut: signOut,
   createRecipe: createRecipe,
   getRecipes: getRecipes,
-  // getOneRecipe,
   updateRecipe,
   deleteRecipe
-  // deleteOneRecipe
 }
