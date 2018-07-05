@@ -58,4 +58,4 @@ module.exports = {
   updateRecipeSuccess,
   deleteRecipeFail,
   deleteRecipeSuccess
- }
+}
