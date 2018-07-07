@@ -30,5 +30,6 @@ $(document).ready(function () {
   $('#close-recipes').click(function () {
     $('.list-of-recipes').empty()
     $('#get-all-recipes').show()
+    $('#content-msg').empty()
   })
 })

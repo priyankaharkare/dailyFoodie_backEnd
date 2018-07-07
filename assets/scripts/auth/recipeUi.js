@@ -5,7 +5,7 @@ const store = require('../store.js')
 const showRecipesTemplate = require('../templates/recipes.handlebars')
 // const getFormFields = require('../../../lib/get-form-fields.js')
 
-const showRecipes = function(data) {
+const showRecipes = function (data) {
   store.recipes = data.recipes
   const showRecipesHtml = showRecipesTemplate({
     recipes: data.recipes
