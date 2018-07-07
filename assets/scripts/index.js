@@ -23,10 +23,12 @@ $(() => {
   $('.recipes-forms').hide()
   $('.signing-out').hide()
   $('.list-of-recipes').hide()
+  $('#close-recipes').hide()
 })
 // code to empty everything in the recipe-list div
 $(document).ready(function () {
   $('#close-recipes').click(function () {
     $('.list-of-recipes').empty()
+    $('#get-all-recipes').show()
   })
 })
