@@ -13,6 +13,7 @@ const onCreateRecipe = function (event) {
 const onGetRecipes = function (event) {
   event.preventDefault()
   authApi.getRecipes()
+    .then(authRecipeUi.showRecipes)
     .then(authRecipeUi.getRecipesSuccess)
     .catch(authRecipeUi.getRecipesFail)
 }
@@ -45,10 +46,10 @@ const onUpdateRecipe = function (event) {
 
   authApi.updateRecipe(data, recipeId)
     .then(authRecipeUi.updateRecipeSuccess)
-    .catch(authRecipeUi.updateRecipeFail)
     .then(authApi.getRecipes)
-    .then(authRecipeUi.getRecipesSuccess)
-    // calling getRecipeSuccess so that the page can be rendered without refresh
+    .then(authRecipeUi.showRecipes)
+    .catch(authRecipeUi.updateRecipeFail)
+    // // calling getRecipeSuccess so that the page can be rendered without refresh
 }
 
 const onDeleteRecipe = function (event) {
@@ -56,9 +57,9 @@ const onDeleteRecipe = function (event) {
   const recipeId = $(event.target).attr('data-id')
   authApi.deleteRecipe(recipeId)
     .then(authRecipeUi.deleteRecipeSuccess)
-    .catch(authRecipeUi.deleteRecipeFail)
     .then(authApi.getRecipes)
-    .then(authRecipeUi.getRecipesSuccess)
+    .then(authRecipeUi.showRecipes)
+    .catch(authRecipeUi.deleteRecipeFail)
 }
 
 const addHandlers = () => {

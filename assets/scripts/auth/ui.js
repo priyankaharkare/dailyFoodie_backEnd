@@ -12,7 +12,7 @@ const signUpSuccess = function (signUpResponse) {
 }
 
 const signUpFail = function (response) {
-  $('#content-msg-msg').html(`Sorry, please try again !,
+  $('#content-msg').html(`Sorry, please try again !,
       <br/> Please Login if you already have an account !`)
   $('.sign-up-form').find('input').val('')
   $('#sign-in-form').find('input').val('')
@@ -63,15 +63,11 @@ const changePasswordFail = function (response) {
 const signOutSuccess = function (response) {
   delete store.user
   $('#content-msg').html('You have successfully signed out ! See you soon')
-  // // store.game.over = true
   $('#sign-in-form').find('input').val('')
   $('#change-password-form').find('input').val('')
   $('.sign-up-form').find('input').val('')
   $('#hide-navbar').hide()
   $('#change-password-form').hide()
-
-  // $('#hidden').hide()
-  // // $('#get-games-form').hide()
   $('.sign-up-form').show()
   $('#sign-in-form').show()
   $('#create-recipe-form').hide()
