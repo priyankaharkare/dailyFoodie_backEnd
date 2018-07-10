@@ -31,5 +31,6 @@ $(document).ready(function () {
     $('.list-of-recipes').empty()
     $('#get-all-recipes').show()
     $('#content-msg').empty()
+    $('#close-recipes').hide()
   })
 })
