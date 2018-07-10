@@ -8,7 +8,7 @@ const signUpSuccess = function (signUpResponse) {
   $('.sign-up-form').find('input').val('')
   $('#sign-in-form').find('input').val('')
   $('#change-password-form').find('input').val('')
-  $('.sign-up-form').hide()
+  // $('.sign-up-form').hide()
 }
 
 const signUpFail = function (response) {
@@ -76,6 +76,7 @@ const signOutSuccess = function (response) {
   $('.recipes-forms').hide()
   $('.list-of-recipes').find('input').val('')
   $('.list-of-recipes').empty()
+  $('.signing-out').hide()
 }
 
 const signOutFailure = function (response) {
