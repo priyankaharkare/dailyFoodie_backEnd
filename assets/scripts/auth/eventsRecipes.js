@@ -18,26 +18,13 @@ const onGetRecipes = function (event) {
     .catch(authRecipeUi.getRecipesFail)
 }
 
-// const onGetOneRecipe = function (event) {
-//   console.log('something happening on get one recipe event' + event.target)
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   console.log('data is ' + data)
-//   authApi.getOneRecipe(data)
-//     .then(authRecipeUi.getOneRecipeSuccess)
-//     .catch(authRecipeUi.getOneRecipeFail)
-// }
-
-// const onDeleteOneRecipe = function (event) {
-//   console.log('deleting one recipe')
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   console.log('delete Recipe data is ' + data)
-//   authApi.getOneRecipe(data)
-//     .then(authRecipeUi.deleteOneRecipeSuccess)
-//     .catch(authRecipeUi.deleteOneRecipeFail)
-//     .then(authApi.getRecipes)
-// }
+const updateFormShow = function (event) {
+  event.preventDefault()
+  console.log(event)
+  $('.update-form-' + $(this).data('id')).removeClass('hide')
+  // console.log($(this).data('id'))
+  $('.update-button').hide()
+}
 
 const onUpdateRecipe = function (event) {
   event.preventDefault()
@@ -65,7 +52,9 @@ const onDeleteRecipe = function (event) {
 const addHandlers = () => {
   $('#get-all-recipes').on('click', onGetRecipes)
   $('#list-of-recipes').on('click', '.delete-recipe', onDeleteRecipe)
-  $('#list-of-recipes').on('submit', '.update-one-recipe', onUpdateRecipe)
+  $('#list-of-recipes').on('click', '.update-button', updateFormShow)
+
+  $('#list-of-recipes').on('submit', '.recipe-update-form', onUpdateRecipe)
 }
 
 module.exports = {
@@ -73,5 +62,6 @@ module.exports = {
   onGetRecipes,
   onUpdateRecipe,
   onDeleteRecipe,
-  addHandlers
+  addHandlers,
+  updateFormShow
 }
