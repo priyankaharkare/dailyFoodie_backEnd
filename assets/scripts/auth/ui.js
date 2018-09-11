@@ -21,15 +21,15 @@ const signUpFail = function (response) {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#content-msg').html(`Yaay! You're signed in`)
+  // $('#content-msg').html(`Yaay! You're signed in`)
   $('#sign-in-form').find('input').val('')
   $('.sign-up-form').find('input').val('')
   $('#change-password-form').find('input').val('')
-  $('.sign-up-form').hide()
+  $('#sign-up-form').hide()
   $('.signing-out').show()
   $('#change-password-form').show()
   $('#sign-in-form').hide()
-  $('#content-msg').html("You've signed in!")
+  $('.content-msg').html("You've signed in!")
   $('.recipes-forms').show()
 
   $('#create-recipe-form').show()
@@ -68,8 +68,10 @@ const signOutSuccess = function (response) {
   $('.sign-up-form').find('input').val('')
   $('#hide-navbar').hide()
   $('#change-password-form').hide()
-  $('.sign-up-form').show()
+  $('#sign-up-form').show()
   $('#sign-in-form').show()
+
+  $('#sign-out-form').show()
   $('#create-recipe-form').hide()
   $('#get-all-recipes').hide()
   $('#get-one-recipe-form').hide()

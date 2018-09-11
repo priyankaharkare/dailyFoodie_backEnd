@@ -4,7 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $background-color: #79cdcd;
 $font-color: #666;
 $white: #fff;
-$grey: rgb(128, 128, 128);
+$grey: #2f4f4f;
 $teal: rgb(0, 156, 161);
 $black: #000;
 $green: #50c878;
@@ -18,29 +18,58 @@ $fuschia: #b200b2;
   background-color: $fuschia;
 }
 
-.content.div {
+.content-msg {
   color: $fuschia;
-  font: 80px;
-  padding: 40px;
+  font-size: 35px;
+  padding: 20px;
+  text-align: center;
 }
 
 .recipe-box {
-  border: 1px;
+  border: 1px solid;
+  padding-right: 10px;
+  margin: 20px;
+}
+
+.form-style{
+margin: 10px;
 }
 
 .intro-info {
   float: left;
 }
 
+.recipe-update-form {
+  text-align: left;
+  font-size: 12px;
+}
+
+
+.update-button {
+  font-size: 12px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.delete-recipe {
+  font-size: 12px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.handlebar-legend {
+  text-align: left;
+}
+
 .login-info {
   float: left;
 }
-
-.content-msg {
-  color: $fuschia;
-  font: 80px;
-  padding: 20px;
-}
+//
+// .content-msg {
+//   color: $fuschia;
+//   font: 100px;
+//   padding: 20px;
+// }
 
 .get-recipes-form {
   border: 1px solid;
@@ -58,6 +87,18 @@ $fuschia: #b200b2;
   padding: 5px;
 }
 
+.wrap {
+  clear: both;
+}
+
+.button1{
+  // display: inline;
+  text-transform: uppercase;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .new-game {
   background-color: $white;
   color: $teal;
@@ -67,23 +108,23 @@ $fuschia: #b200b2;
   padding: 5px;
 }
 
-.buttons {
-  border: 1px solid $border;
-  float: left;
-  margin: 5px;
-  padding: 5px;
-}
+// .buttons {
+//   border: 1px solid $border;
+//   float: left;
+//   margin: 5px;
+//   padding: 5px;
+// }
 
 .sign-in-button {
   background-color: $white;
   color: $teal;
 }
 
-.signing-out {
-  background-color: $white;
-  color: $teal;
-  margin: 30px;
-}
+// .signing-out {
+//   background-color: $white;
+//   color: $teal;
+//   margin: 30px;
+// }
 
 .change-password-button {
   background-color: $white;
@@ -93,6 +134,11 @@ $fuschia: #b200b2;
 h4 {
   color: $grey;
   font-size: 20px;
+  margin: 10px;
+}
+
+p {
+  margin: 10px;
 }
 
 .add-recipes {
@@ -111,6 +157,11 @@ h4 {
   color: $teal;
   padding: 20px;
   font-size: 20px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px
 }
 
 .close-all-recipes {
@@ -118,6 +169,10 @@ h4 {
   color: $teal;
   padding: 20px;
   font-size: 20px;
+}
+
+.faq-button {
+  margin: 10px;
 }
 
 .add-legend-class {
@@ -144,12 +199,6 @@ h5 {
   font-size: 15px;
 }
 
-.delete-recipe {
-  font-size: 12px;
-  padding: 10px;
-  margin: 10px;
-}
-
 .update-fieldset {
   border: 1px solid $grey;
   padding: 5px;
@@ -165,4 +214,36 @@ h5 {
 .new-recipe {
   width: 500px;
   height: 50px;
+}
+
+.signing-out {
+  background-color: $white;
+  color: $teal;
+  margin: 30px;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+}
+
+.change-password-button {
+  background-color: $white;
+  color: $teal;
+}
+
+.row {
+  margin-left: 10px;
+  display: flex;
+}
+
+#change-password-form {
+  color: $black;
+  position: absolute;
+  top: 65px;
+  right: 0;
+  font-size: 0.8em;
+  width: 150px;
+
+  margin-right:5px;
+  // position:relative;
+  // float:right;
 }

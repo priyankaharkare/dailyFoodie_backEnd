@@ -1,5 +1,5 @@
 {{#each recipes as |recipe|}}
-  <div class="col-sm-6 recipe-box">
+  <div class="col-sm-6 recipe-box card">
     <h5 data-id="{{recipe.id}}" class="recipe-list"> Name: {{recipe.name}}</h5>
     <ul data-id="{{recipe.id}}">
       <li>
@@ -15,40 +15,21 @@
         No link found.
       {{/if}}</h5> </li>
 
-      <button class="btn btn-default delete-recipe" data-class="delete-recipe" data-id='{{recipe.id}}'>Remove recipe!</button>
-      <!-- <button class="btn btn-default update-recipes" id = "update-recipe" data-class="update-recipe" data-id='{{recipe.id}}'>Update recipe!</button> -->
-      <!-- //<li><button class="btn btn-default update-recipe" data-class="update-recipe" data-id='{{recipe.id}}'>Update recipe!</button></li> -->
-      <!-- <div><form class="update-one-recipe hide" data-id="{{recipe.id}}"> -->
-      <!-- TEst code below -->
+      <button class="btn btn-default delete-recipe" data-class="delete-recipe" data-id='{{recipe.id}}'>Remove recipe</button>
+
       <form class="hide recipe-update-form update-form-{{recipe.id}}" data-id="{{recipe.id}}">
 
-        <legend class="handlebar-legend">Update Your Recipe:</legend>
+        <legend class="handlebar-legend"><h5>Update Your Recipe:</h5></legend>
         Update recipe name: <input name="name" type="text" placeholder="Update Recipe Name " data-id="{{recipe.id}}" class="update-recipe-name" value="{{recipe.name}}"><br> Update recipe steps: <input name="steps" type="text" placeholder="Update the receipe steps"
           data-id="{{recipe.id}}" value="{{recipe.steps}}"><br> Update recipe link: <input name="link" type="text" placeholder="Update the recipe URL" data-id="{{recipe.id}}" value="{{recipe.link}}" autocomplete="off">
         </fieldset>
 
-
-        <!-- <input class="inputReset" name="stock[shares]" placeholder="New Share Amount" type="number"> -->
         <button type="submit" class="update-one-recipe">Save</button>
-<!-- data-id="{{recipe.id}} -->
-      <!-- <button type="submit" class="update-one-recipe" data-id="{{recipe.id}}">Save</button> -->
+
 </form>
-      <button data-id="{{recipe.id}}" class="update-button" type="submit">Update Recipe</button>
+      <button data-id="{{recipe.id}}" class="btn btn-default update-button" type="submit">Update Recipe</button>
 
 
-
-      <!-- working code below -->
-      <!-- <div class><form class="update-one-recipe " id="update-recipe-{{recipe.id}}" data-id="{{recipe.id}}">
-        <fieldset>
-          <legend class="handlebar-legend">Update Your Recipe:</legend>
-          Update recipe name: <input name="name" type="text" placeholder="Update Recipe Name " data-id="{{recipe.id}}" class="update-recipe-name" value="{{recipe.name}}"><br>
-          Update recipe steps: <input name="steps" type="text" placeholder="Update the receipe steps" data-id="{{recipe.id}}" value="{{recipe.steps}}"><br>
-          Update recipe link: <input name="link" type="text" placeholder="Update the recipe URL" data-id="{{recipe.id}}" value="{{recipe.link}}" autocomplete="off">
-        </fieldset>
-          <button type="submit" class="update-one-recipe" data-id="{{recipe.id}}"> Save </button>
-     </form> </div> -->
-
-      <!-- div for box below -->
 
     </ul>
   </div>
